@@ -1,0 +1,34 @@
+project:
+  type: website
+website:
+  title: "Intro to Python: Session 2"
+  navbar:
+    background: dark
+    search: false
+    left:
+      - href: index.qmd
+        text: Session 2 Starter
+      - href: completed.qmd
+        text: Session 2 Completed  
+      - text: "Practice"
+        menu:
+        - p3-conditional-iteration.qmd
+        - p3-conditional-iteration-solved.qmd
+      # - href: https://omis482-f2024-class-website.netlify.app #add your website
+      #   text: Go to the Course Website
+  drafts:
+    - p3-conditional-iteration-solved.qmd
+  draft-mode: gone
+
+format:
+  html:
+    smooth-scroll: true
+    theme:
+      light: materia
+      dark: darkly
+    fontsize: 1.4em
+    linestretch: 1.5
+    toc: true
+
+editor: visual
+

@@ -1,0 +1,42 @@
+project:
+  type: website
+website:
+  title: "Functions: Session 3"
+  navbar:
+    background: dark
+    search: false
+    left:
+      - href: index.qmd
+        text: Session 3 Starter
+      - href: completed.qmd
+        text: Session 3 Completed
+      - text: "Practice"
+        menu:
+        - p4-functions.qmd
+        - p4-functions-solved.qmd
+      - text: "Challenge"
+        menu:
+        - challenge1-functions.qmd
+        - challenge1-functions_solved.qmd
+        
+      # - href: https://omis482-f2024-class-website.netlify.app #add your website
+      #   text: Go to the Course Website
+  drafts:
+    - p4-functions-solved.qmd
+    - challenge1-functions_solved.qmd
+  draft-mode: gone
+
+format:
+  html:
+    smooth-scroll: true
+    theme:
+      light: materia
+      dark: darkly
+    fontsize: 1.4em
+    linestretch: 1.5
+    toc: true
+
+editor: visual
+
+
+
