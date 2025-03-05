@@ -156,3 +156,55 @@ while inp != 'done' :
 print('Thanks for playing with us!')
 ```
 
+
+4) **Count Vowels in a String** Create a function `count_vowels(text)` that counts the number of vowels (a, e, i, o, u) in a given string. Use a for loop and conditional statements to accomplish the task.
+
+```{pyodide}
+#| startover: false
+#| autorun: false
+#| min-lines: 3
+# Function to count vowels in a string
+def count_vowels(text):
+    vowels = "aeiouAEIOU"  # Define vowels (both lowercase and uppercase)
+    count = 0  # Initialize counter
+
+    for char in text:  # Loop through each character in the string
+        if char in vowels:  # Check if the character is a vowel
+            count += 1  # Increment count if it's a vowel
+
+    return count  # Return the total count of vowels
+
+# Example usage
+text = "Hello World"
+print("Number of vowels in the text:", count_vowels(text))
+
+```
+
+
+5) **Password Strength Checker**
+Write a function `check_password_strength(password)` that evaluates a password. Then test it on three passwords of your choice. The rules are:
+* If it's less than 6 characters → "Weak"
+* If it's between 6-10 characters → "Moderate"
+* If it's more than 10 characters → "Strong"
+
+
+```{pyodide}
+#| startover: false
+#| autorun: false
+#| min-lines: 3
+# Function to check password strength
+def check_password_strength(password):
+    if len(password) < 6:
+        return "Weak"
+    elif 6 <= len(password) <= 10:
+        return "Moderate"
+    else:
+        return "Strong"
+
+# List of passwords to test
+passwords = ["abc", "myp@ss1", "SuperSecurePassword123"]
+
+# Loop through the list and test each password
+for password in passwords:
+    print("Password:", password, "-> Strength:", check_password_strength(password))
+```

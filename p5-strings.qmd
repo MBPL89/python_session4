@@ -89,7 +89,7 @@ from io import StringIO
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
-mock_input = StringIO("45\n10\n")
+mock_input = StringIO("...\n...\n")
 sys.stdin = mock_input
 ```
 
@@ -103,6 +103,30 @@ sys.stdin = mock_input
 3)  Create a program that, collects user input until the user types "done".
 
     For each string in input, first, strip any white space at the beginning or the end of the string. Then delete all the vowels from the string and print the resulting string.
+
+```{pyodide}
+#| startover: false
+#| autorun: false
+#| min-lines: 3
+
+```
+
+4) **Count Vowels in a String** Create a function `count_vowels(text)` that counts the number of vowels (a, e, i, o, u) in a given string. Use a for loop and conditional statements to accomplish the task.
+
+```{pyodide}
+#| startover: false
+#| autorun: false
+#| min-lines: 3
+
+
+```
+
+5) **Password Strength Checker**
+Write a function `check_password_strength(password)` that evaluates a password. Then test it on three passwords of your choice. The rules are:
+* If it's less than 6 characters → "Weak"
+* If it's between 6-10 characters → "Moderate"
+* If it's more than 10 characters → "Strong"
+
 
 ```{pyodide}
 #| startover: false
