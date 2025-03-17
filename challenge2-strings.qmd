@@ -78,6 +78,7 @@ data = ''
 ### Write your code here
 
 ```{pyodide}
+#| persist: true
 #| startover: false
 #| autorun: false
 #| min-lines: 3
