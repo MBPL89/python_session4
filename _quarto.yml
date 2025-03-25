@@ -18,10 +18,10 @@ website:
         menu:
         - challenge2-strings.qmd
         - challenge2-strings_solved.qmd
-  drafts:
-    - p5-strings-solved.qmd
-    - challenge2-strings_solved.qmd
-  draft-mode: gone
+  #drafts:
+  #  - p5-strings-solved.qmd
+  #  - challenge2-strings_solved.qmd
+  #draft-mode: gone
 
 format:
   html:

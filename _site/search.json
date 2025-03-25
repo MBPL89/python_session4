@@ -341,5 +341,19 @@
     "title": "4. Strings",
     "section": "Format operator",
     "text": "Format operator\nThe format operator, % allows us to construct strings, replacing parts of the strings with the data stored in variables.\n- %d - integer - %g - floating-point number - %s - string\n\n\n\n\n\n\n\n\nYou can use multiple values too.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImages and GIFs Disclaimer: Some of the images and GIFs used on this website are not owned by me. They are used for educational and illustrative purposes only. All rights belong to their respective owners. If you believe any content violates copyright, please contact me for prompt removal.\n\n\n\n\n\n\n  \n  \n    © 2025. All Rights Reserved.\n  \n  \n\n  \n  \n    Enabled by Dr. Biagio Palese"
+  },
+  {
+    "objectID": "p5-strings-solved.html",
+    "href": "p5-strings-solved.html",
+    "title": "4. Strings Practice - Solution",
+    "section": "",
+    "text": "Find and slice. Use find and string slicing to extract the portion of the string after the colon character and then use the float function to convert the extracted string into a floating point number.\nIn the second cell below, generalize this algorithm. It should loop through the three strings provided in input and ensure that there is a “:” before extracting, converting and printing the number.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCreate a program that, collects user input until the user types “done”.\nGiven any string in input will first check for the length of the string. If the string in less than 5 characters long, it prints the message “Can’t do anything with such a short string, try harder!”\nWhen the string is longer than 5 character, then the program will slice the string and only extract the middle five characters.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCreate a program that, collects user input until the user types “done”.\nFor each string in input, first, strip any white space at the beginning or the end of the string. Then delete all the vowels from the string and print the resulting string.\n\n\n\n\n\n\n\n\n\n\nCount Vowels in a String Create a function count_vowels(text) that counts the number of vowels (a, e, i, o, u) in a given string. Use a for loop and conditional statements to accomplish the task.\n\n\n\n\n\n\n\n\n\n\nPassword Strength Checker Write a function check_password_strength(password) that evaluates a password. Then test it on three passwords of your choice. The rules are:\n\n\nIf it’s less than 6 characters → “Weak”\nIf it’s between 6-10 characters → “Moderate”\nIf it’s more than 10 characters → “Strong”"
+  },
+  {
+    "objectID": "challenge2-strings_solved.html",
+    "href": "challenge2-strings_solved.html",
+    "title": "4. Challenge - Solution",
+    "section": "",
+    "text": "This is a challenge that uses the skills you developed to this point, with particular attention to string manipulation\nThe task is to write a program that will compute the total amount a guest should pay by parsing an arbitrary restaurant check. The check, extracted from a point of sale, comes to you as a string with items, categories and amounts. You should extract the appropriate data and compute the sum total of what the guest spent.\nSince the data comes from a system, a Point of Sale, you can be sure that its structure is fixed. You should ensure that your code works for a typical check, using the following sample:\ndata = 'chicken food$12.50;burger food$10.50;beer drink$5.00;wine drink$6.50'\nYou should then make sure your code generalizes to the following test cases:\ndata = 'chicken food$12.50;burger food$10.50;beer drink$5.00;wine drink$6.50;soda drink$2.50;poke food$14.30'\ndata = 'chicken food$12.50'\ndata = ''\n\nWrite your code here"
   }
 ]
