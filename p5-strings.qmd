@@ -83,8 +83,7 @@ sys.stdin = mock_input
 
 
 # Example
-titles = 
-print(fix_titles(titles))
+titles = print(fix_titles(titles))
 ```
 
 2) **Centered Banner Generator:** Create a function that takes a word and prints it as a banner, centered in a width of 30 using * as the fill character. 
