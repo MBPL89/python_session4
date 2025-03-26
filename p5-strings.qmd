@@ -80,10 +80,6 @@ sys.stdin = mock_input
 #| autorun: false
 #| min-lines: 3
 
-
-
-# Example
-titles = print(fix_titles(titles))
 ```
 
 2) **Centered Banner Generator:** Create a function that takes a word and prints it as a banner, centered in a width of 30 using * as the fill character. 
@@ -104,11 +100,6 @@ sys.stdin = mock_input
 #| autorun: false
 #| min-lines: 3
 
-
-
-# Example
-inp_word = input() 
-print(create_banner(inp_word))
 ```
 
 3) **File Filter:** Given a list of filenames, print only those that end with .jpg or .png with an appropriate message. 
@@ -137,17 +128,6 @@ files = ["photo.jpg", "document.pdf", "image.png", "notes.txt"]
 #| autorun: false
 #| min-lines: 3
 
-#Write your code here
-
-
-
-# Examples
-print(clean_left("---Warning!"))          
-# Output: "Warning!"
-
-print(clean_left("***Important Notice"))  
-# Output: "Important Notice"
-
 ```
 
 5) **Censorship Machine:** Censor any inappropriate words in a user input string (e.g., replace `"darn"` with `"****"`). Optionally, only replace the first occurrence. 
@@ -168,12 +148,6 @@ sys.stdin = mock_input
 #| autorun: false
 #| min-lines: 3
 
-
-
-
-# Example
-sentence = input() 
-print(censor_text(sentence))
 ```
 
 6) **Letter counter:** A secret message is sent with random capitalizations by the zodiac killer. You need to count the number of "k" and "m" (for kill and murder) in the text. It does not matter if they are capitalized or not, any occurrence of the letter needs to be counted. Use the functions you deem best for the job. 
