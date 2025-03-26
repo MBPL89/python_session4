@@ -67,24 +67,17 @@ from io import StringIO
 
 **Tip:** Use `str.capitalize()`
 
-```{pyodide}
-#| persist: true
-#| autorun: false
-#| min-lines: 3
-mock_input = StringIO("tHe gReaT GaTsBy\ncAtcHer in the rYe\nI malaVOglia\n")
-sys.stdin = mock_input
-```
+
 
 ```{pyodide}
 #| persist: true
 #| startover: false
 #| autorun: false
 #| min-lines: 3
-def fix_titles(titles):
-    return [title.capitalize() for title in titles]
-
-# Example
-titles = print(fix_titles(titles))
+titles = ["tHe gReaT GaTsBy, cAtcHer in the rYe, I malaVOglia\n"]
+for title in titles:
+  fixed = title.capitalize()
+  print(fixed)
 
 ```
 

@@ -66,19 +66,13 @@ from io import StringIO
 
 **Tip:** Use `str.capitalize()`
 
-```{pyodide}
-#| persist: true
-#| autorun: false
-#| min-lines: 3
-mock_input = StringIO("tHe gReaT GaTsBy\ncAtcHer in the rYe\nI malaVOglia\n")
-sys.stdin = mock_input
-```
 
 ```{pyodide}
 #| persist: true
 #| startover: false
 #| autorun: false
 #| min-lines: 3
+
 
 ```
 
