@@ -341,12 +341,5 @@
     "title": "4. Strings",
     "section": "Format operator",
     "text": "Format operator\nThe format operator, % allows us to construct strings, replacing parts of the strings with the data stored in variables.\n- %d - integer - %g - floating-point number - %s - string\n\n\n\n\n\n\n\n\nYou can use multiple values too.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImages and GIFs Disclaimer: Some of the images and GIFs used on this website are not owned by me. They are used for educational and illustrative purposes only. All rights belong to their respective owners. If you believe any content violates copyright, please contact me for prompt removal.\n\n\n\n\n\n\n  \n  \n    © 2025. All Rights Reserved.\n  \n  \n\n  \n  \n    Enabled by Dr. Biagio Palese"
-  },
-  {
-    "objectID": "challenge2-strings_solved.html",
-    "href": "challenge2-strings_solved.html",
-    "title": "4. Challenge - Solution",
-    "section": "",
-    "text": "This is a challenge that uses the skills you developed to this point, with particular attention to string manipulation\nThe task is to write a program that will compute the total amount a guest should pay by parsing an arbitrary restaurant check. The check, extracted from a point of sale, comes to you as a string with items, categories and amounts. You should extract the appropriate data and compute the sum total of what the guest spent.\nSince the data comes from a system, a Point of Sale, you can be sure that its structure is fixed. You should ensure that your code works for a typical check, using the following sample:\ndata = 'chicken food$12.50;burger food$10.50;beer drink$5.00;wine drink$6.50'\nYou should then make sure your code generalizes to the following test cases:\ndata = 'chicken food$12.50;burger food$10.50;beer drink$5.00;wine drink$6.50;soda drink$2.50;poke food$14.30'\ndata = 'chicken food$12.50'\ndata = ''\n\nWrite your code here"
   }
 ]
