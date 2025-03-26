@@ -62,7 +62,159 @@ from io import StringIO
 
 ```
 
-1)  Find and slice. Use find and string slicing to extract the portion of the string after the colon character and then use the float function to convert the extracted string into a floating point number.
+1) **Title Fixer:** You receive a list of messy book titles like ["tHe gReaT GaTsBy", "cAtcHer in the rYe"]. Write a function that returns each title with only the first letter capitalized and the rest in lowercase. 
+
+**Tip:** Use `str.capitalize()`
+
+```{pyodide}
+#| persist: true
+#| autorun: false
+#| min-lines: 3
+mock_input = StringIO("tHe gReaT GaTsBy\ncAtcHer in the rYe\nI malaVOglia\n")
+sys.stdin = mock_input
+```
+
+```{pyodide}
+#| persist: true
+#| startover: false
+#| autorun: false
+#| min-lines: 3
+
+
+
+# Example
+titles = 
+print(fix_titles(titles))
+```
+
+2) **Centered Banner Generator:** Create a function that takes a word and prints it as a banner, centered in a width of 30 using * as the fill character. 
+
+**Tip:** Use `str.center(width[, fillchar])` 
+
+```{pyodide}
+#| persist: true
+#| autorun: false
+#| min-lines: 3
+mock_input = StringIO("...\n")
+sys.stdin = mock_input
+```
+
+```{pyodide}
+#| persist: true
+#| startover: false
+#| autorun: false
+#| min-lines: 3
+
+
+
+# Example
+inp_word = input() 
+print(create_banner(inp_word))
+```
+
+3) **File Filter:** Given a list of filenames, print only those that end with .jpg or .png with an appropriate message. 
+
+**Tip:** Use `str.endswith(suffix[, start[, end]])` 
+
+```{pyodide}
+#| persist: true
+#| startover: false
+#| autorun: false
+#| min-lines: 3
+
+files = ["photo.jpg", "document.pdf", "image.png", "notes.txt"]
+
+
+
+```
+
+4) **Clean-Up on the Left:** You’re given strings like `"---Warning!"` or `"***Important Notice"`. Strip out all leading special characters (-, *, etc.) and return the cleaned string. 
+
+**Tip:** Use `str.lstrip([chars])` 
+
+```{pyodide}
+#| persist: true
+#| startover: false
+#| autorun: false
+#| min-lines: 3
+
+#Write your code here
+
+
+
+# Examples
+print(clean_left("---Warning!"))          
+# Output: "Warning!"
+
+print(clean_left("***Important Notice"))  
+# Output: "Important Notice"
+
+```
+
+5) **Censorship Machine:** Censor any inappropriate words in a user input string (e.g., replace `"darn"` with `"****"`). Optionally, only replace the first occurrence. 
+
+**Tip:** Use `str.replace(old, new[, count])` 
+
+```{pyodide}
+#| persist: true
+#| autorun: false
+#| min-lines: 3
+mock_input = StringIO("This is a fooking mess. Darn it! Shooot, what a fook! Darn fook fooking shooot.\n")
+sys.stdin = mock_input
+```
+
+```{pyodide}
+#| persist: true
+#| startover: false
+#| autorun: false
+#| min-lines: 3
+
+
+
+
+# Example
+sentence = input() 
+print(censor_text(sentence))
+```
+
+6) **Letter counter:** A secret message is sent with random capitalizations by the zodiac killer. You need to count the number of "k" and "m" (for kill and murder) in the text. It does not matter if they are capitalized or not, any occurrence of the letter needs to be counted. Use the functions you deem best for the job. 
+
+
+```{pyodide}
+#| persist: true
+#| autorun: false
+#| min-lines: 3
+mock_input = StringIO("K...k...M...m...KaBoom. Must Kill Many More.\n")
+sys.stdin = mock_input
+```
+
+```{pyodide}
+#| persist: true
+#| startover: false
+#| autorun: false
+#| min-lines: 3
+
+```
+
+7) **Shouting Bot:** Make a function that takes a sentence and “shouts” it in all caps, adding three exclamation points at the end. 
+
+```{pyodide}
+#| persist: true
+#| autorun: false
+#| min-lines: 3
+mock_input = StringIO("K...k...M...m...KaBoom. Must Kill Many More.\n")
+sys.stdin = mock_input
+```
+
+```{pyodide}
+#| persist: true
+#| startover: false
+#| autorun: false
+#| min-lines: 3
+
+```
+
+8)  Find and slice. Use find and string slicing to extract the portion of the string after the colon character and then use the float function to convert the extracted string into a floating point number.
 
     In the second cell below, generalize this algorithm. It should loop through the three strings provided in input and ensure that there is a ":" before extracting, converting and printing the number.
 
@@ -82,7 +234,7 @@ from io import StringIO
 
 ```
 
-2)  Create a program that, collects user input until the user types "done".
+9)  Create a program that, collects user input until the user types "done".
 
     Given any string in input will first check for the length of the string. If the string in less than 5 characters long, it prints the message "Can't do anything with such a short string, try harder!"
 
@@ -104,7 +256,7 @@ sys.stdin = mock_input
 
 ```
 
-3)  Create a program that, collects user input until the user types "done".
+10)  Create a program that, collects user input until the user types "done".
 
     For each string in input, first, strip any white space at the beginning or the end of the string. Then delete all the vowels from the string and print the resulting string.
 
@@ -116,7 +268,7 @@ sys.stdin = mock_input
 
 ```
 
-4) **Count Vowels in a String** Create a function `count_vowels(text)` that counts the number of vowels (a, e, i, o, u) in a given string. Use a for loop and conditional statements to accomplish the task.
+11) **Count Vowels in a String** Create a function `count_vowels(text)` that counts the number of vowels (a, e, i, o, u) in a given string. Use a for loop and conditional statements to accomplish the task.
 
 ```{pyodide}
 #| persist: true
@@ -127,7 +279,7 @@ sys.stdin = mock_input
 
 ```
 
-5) **Password Strength Checker**
+12) **Password Strength Checker**
 Write a function `check_password_strength(password)` that evaluates a password. Then test it on three passwords of your choice. The rules are:
 * If it's less than 6 characters → "Weak"
 * If it's between 6-10 characters → "Moderate"
