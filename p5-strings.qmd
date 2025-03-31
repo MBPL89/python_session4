@@ -66,6 +66,13 @@ from io import StringIO
 
 **Tip:** Use `str.capitalize()`
 
+```{pyodide}
+#| persist: true
+#| autorun: false
+#| min-lines: 3
+mock_input = StringIO("...\n")
+sys.stdin = mock_input
+```
 
 ```{pyodide}
 #| persist: true
@@ -75,6 +82,7 @@ from io import StringIO
 
 
 ```
+
 
 2) **Centered Banner Generator:** Create a function that takes a word and prints it as a banner, centered in a width of 30 using * as the fill character. 
 
@@ -115,6 +123,14 @@ files = ["photo.jpg", "document.pdf", "image.png", "notes.txt"]
 4) **Clean-Up on the Left:** You’re given strings like `"---Warning!"` or `"***Important Notice"`. Strip out all leading special characters (-, *, etc.) and return the cleaned string. 
 
 **Tip:** Use `str.lstrip([chars])` 
+
+```{pyodide}
+#| persist: true
+#| autorun: false
+#| min-lines: 3
+mock_input = StringIO("...\n,...\n,...\n")
+sys.stdin = mock_input
+```
 
 ```{pyodide}
 #| persist: true
@@ -181,7 +197,7 @@ sys.stdin = mock_input
 
 ```
 
-8)  Find and slice. Use find and string slicing to extract the portion of the string after the colon character and then use the float function to convert the extracted string into a floating point number.
+8)  **Find and slice.** Use find and string slicing to extract the portion of the string after the colon character and then use the float function to convert the extracted string into a floating point number.
 
     In the second cell below, generalize this algorithm. It should loop through the three strings provided in input and ensure that there is a ":" before extracting, converting and printing the number.
 
@@ -190,6 +206,8 @@ sys.stdin = mock_input
 #| startover: false
 #| autorun: false
 #| min-lines: 3
+# Here we create the algorithm for a single input
+string = 'X-DSPAM-Confidence:0.8475'
 
 ```
 
@@ -198,10 +216,10 @@ sys.stdin = mock_input
 #| startover: false
 #| autorun: false
 #| min-lines: 3
-
+strings = ['X-DSPAM-Confidence:0.8475', 'no colon here', 'X-DSPAM-Confidence:0.345']
 ```
 
-9)  Create a program that, collects user input until the user types "done".
+9) **Middle five slicer:** Create a program that, collects user input until the user types "done".
 
     Given any string in input will first check for the length of the string. If the string in less than 5 characters long, it prints the message "Can't do anything with such a short string, try harder!"
 
@@ -211,7 +229,7 @@ sys.stdin = mock_input
 #| persist: true
 #| autorun: false
 #| min-lines: 3
-mock_input = StringIO("...\n...\n")
+mock_input = StringIO("hi\nhello\nYo! wasup bro\ndone\n")
 sys.stdin = mock_input
 ```
 
@@ -223,9 +241,16 @@ sys.stdin = mock_input
 
 ```
 
-10)  Create a program that, collects user input until the user types "done".
+10) **Vowels delete:** Create a program that, collects user input until the user types "done".
 
     For each string in input, first, strip any white space at the beginning or the end of the string. Then delete all the vowels from the string and print the resulting string.
+
+```{pyodide}
+#| autorun: false
+#| min-lines: 3
+mock_input = StringIO("hi\nhello\nYo! wasup bro\ndone\n")
+sys.stdin = mock_input
+```
 
 ```{pyodide}
 #| persist: true
@@ -243,6 +268,7 @@ sys.stdin = mock_input
 #| autorun: false
 #| min-lines: 3
 
+text = "Hello Out There World"
 
 ```
 
@@ -258,5 +284,8 @@ Write a function `check_password_strength(password)` that evaluates a password. 
 #| startover: false
 #| autorun: false
 #| min-lines: 3
+
+# List of passwords to test
+passwords = ["abc", "myp@ss1", "SuperSecurePassword123"]
 
 ```

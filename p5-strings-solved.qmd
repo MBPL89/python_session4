@@ -67,8 +67,28 @@ from io import StringIO
 
 **Tip:** Use `str.capitalize()`
 
+```{pyodide}
+#| persist: true
+#| autorun: false
+#| min-lines: 3
+mock_input = StringIO("...\n")
+sys.stdin = mock_input
+```
 
+```{pyodide}
+#| persist: true
+#| startover: false
+#| autorun: false
+#| min-lines: 3
+titles = input()
+titles = titles.split(", ")
+for title in titles:
+  fixed = title.capitalize()
+  print(fixed)
 
+```
+
+**Alternative solution**
 ```{pyodide}
 #| persist: true
 #| startover: false
@@ -89,7 +109,7 @@ for title in titles:
 #| persist: true
 #| autorun: false
 #| min-lines: 3
-mock_input = StringIO("...\n")
+mock_input = StringIO("malaVOglia\n")
 sys.stdin = mock_input
 ```
 
@@ -98,12 +118,12 @@ sys.stdin = mock_input
 #| startover: false
 #| autorun: false
 #| min-lines: 3
-def create_banner(word):
-    return word.center(30, '*')
-
-# Example
-inp_word = input() 
-print(create_banner(inp_word))
+def centerBanner(text):
+  return text.center(30, "*")
+  
+word = input()
+title = centerBanner(word)
+print(title)
 ```
 
 3) **File Filter:** Given a list of filenames, print only those that end with .jpg or .png with an appropriate message. 
@@ -116,12 +136,12 @@ print(create_banner(inp_word))
 #| autorun: false
 #| min-lines: 3
 
-files = ["photo.jpg", "document.pdf", "image.png", "notes.txt"]
-
 def show_image_files(filenames):
     for name in filenames:
         if name.endswith(('.jpg', '.png')):
             print(name)
+
+files = ["photo.jpg", "document.pdf", "image.png", "notes.txt"]
 
 show_image_files(files)
 ```
@@ -129,6 +149,14 @@ show_image_files(files)
 4) **Clean-Up on the Left:** You’re given strings like `"---Warning!"` or `"***Important Notice"`. Strip out all leading special characters (-, *, etc.) and return the cleaned string. 
 
 **Tip:** Use `str.lstrip([chars])` 
+
+```{pyodide}
+#| persist: true
+#| autorun: false
+#| min-lines: 3
+mock_input = StringIO("***Important Notice, NOTE, ---Warning!\n")
+sys.stdin = mock_input
+```
 
 ```{pyodide}
 #| persist: true
@@ -140,12 +168,9 @@ def clean_left(text):
     cleaned_text = text.lstrip("-*")
     return cleaned_text
 
-# Examples
-print(clean_left("---Warning!"))          
-# Output: "Warning!"
-
-print(clean_left("***Important Notice"))  
-# Output: "Important Notice"
+warnings = input()
+for warning in warnings.split(", "):
+  print(clean_left(warning))
 
 ```
 
@@ -167,21 +192,17 @@ sys.stdin = mock_input
 #| autorun: false
 #| min-lines: 3
 def censor_text(text):
-    bad_words = ["darn", "fook", "fooking", "shooot"]
-    words = text.split()
+  bad_words = ["darn", "fook", "fooking", "shooot"]
+  words = text.split()   
+  for word in words:
+    if word.strip('.,;:!?').lower() in bad_words:
+      bleep = "*" * len(word)
+      text = text.replace(word, bleep)
+  return text
 
-    for i in range(len(words)):
-        stripped_word = words[i].rstrip(".,!?")  
-        
-        if stripped_word.lower() in bad_words:
-            words[i] = words[i].replace(stripped_word, "****")
-
-    return " ".join(words)
-
-
-# Example
-sentence = input() 
-print(censor_text(sentence))
+inp = input()
+clean_message = censor_text(inp)
+print(clean_message)
 ```
 
 6) **Letter counter:** A secret message is sent with random capitalizations by the zodiac killer. You need to count the number of "k" and "m" (for kill and murder) in the text. It does not matter if they are capitalized or not, any occurrence of the letter needs to be counted. Use the functions you deem best for the job. 
@@ -206,9 +227,10 @@ def count_letter(text, letter):
     count = text.count(letter)
     print("Number of '%s': %d" % (letter, count))
 
-message = input('What is your message \n') 
-count_letter(message, "k")
-count_letter(message, "m")
+message = input()
+letters = ["k", "m"]
+for letter in letters:
+  count_letter(message, letter)
 ```
 
 7) **Shouting Bot:** Make a function that takes a sentence and “shouts” it in all caps, adding three exclamation points at the end. 
@@ -226,15 +248,15 @@ sys.stdin = mock_input
 #| startover: false
 #| autorun: false
 #| min-lines: 3
-def shout(text):
+def shouter_bot(text):
     shouted_text = text.upper() + "!!!"
     return shouted_text
 
-message = input('What is your message \n') 
-print(shout(message))
+message = input() 
+print(shouter_bot(message))
 ```
 
-8)  Find and slice. Use find and string slicing to extract the portion of the string after the colon character and then use the float function to convert the extracted string into a floating point number.
+8)  **Find and slice.** Use find and string slicing to extract the portion of the string after the colon character and then use the float function to convert the extracted string into a floating point number.
 
     In the second cell below, generalize this algorithm. It should loop through the three strings provided in input and ensure that there is a ":" before extracting, converting and printing the number.
 
@@ -257,7 +279,7 @@ else:
 #| startover: false
 #| autorun: false
 #| min-lines: 3
-# Here we generalize and replicate the above program for a list of strings in input
+# Generalize and replicate the above program for a list of strings in input
 strings = ['X-DSPAM-Confidence:0.8475', 'no colon here', 'X-DSPAM-Confidence:0.345']
 
 for string in strings :
@@ -269,7 +291,7 @@ for string in strings :
         print("We could not find the ':' symbol")
 ```
 
-9)  Create a program that, collects user input until the user types "done".
+9)  **Middle five slicer:** Create a program that, collects user input until the user types "done".
 
     Given any string in input will first check for the length of the string. If the string in less than 5 characters long, it prints the message "Can't do anything with such a short string, try harder!"
 
@@ -278,7 +300,7 @@ for string in strings :
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
-mock_input = StringIO("45\n10\n")
+mock_input = StringIO("hi\nhello\nYo! wasup bro\ndone\n")
 sys.stdin = mock_input
 ```
 
@@ -287,7 +309,7 @@ sys.stdin = mock_input
 #| autorun: false
 #| min-lines: 3
 # Collect first input and start the loop
-inp = input('Please, enter some text. Type "done" to stop: ')
+inp = input()
 
 while inp != 'done' :
     string_length = len(inp)
@@ -295,35 +317,41 @@ while inp != 'done' :
         starting = string_length // 2 - 2
         print(inp[starting : starting + 5])
     else:
-        # We use the escape character \ within the string for illustration pursposes
+        # The escape character \ within the string for illustration purposes
         # Alternatively we could have simply used double quotes for the string:
         # print("Can't do anything with such a short string, try harder!")
         print('Can\'t do anything with such a short string, try harder!')
         
-    inp = input('Please, enter some text. Type "done" to stop: ')
+    inp = input()
     
 print('Thanks for playing with us!')
 ```
 
-10)  Create a program that, collects user input until the user types "done".
+10) **Vowels delete:**  Create a program that, collects user input until the user types "done".
 
     For each string in input, first, strip any white space at the beginning or the end of the string. Then delete all the vowels from the string and print the resulting string.
+
+```{pyodide}
+#| autorun: false
+#| min-lines: 3
+mock_input = StringIO("hi\nhello\nYo! wasup bro\ndone\n")
+sys.stdin = mock_input
+```
 
 ```{pyodide}
 #| startover: false
 #| autorun: false
 #| min-lines: 3
 # Collect first input and start the loop
-inp = input('Please, enter some text. Type "done" to stop: ')
+inp = input()
 
 while inp != 'done' :
     text = inp.strip()
     for vowel in ['a', 'e', 'i', 'o', 'u'] :
         text = text.replace(vowel, "")
-
     print('Your input string with no vowels is: ', text)
-    inp = input('Please, enter some text. Type "done" to stop: ')
-    
+    inp = input()
+   
 print('Thanks for playing with us!')
 ```
 
@@ -336,19 +364,16 @@ print('Thanks for playing with us!')
 #| min-lines: 3
 # Function to count vowels in a string
 def count_vowels(text):
-    vowels = "aeiouAEIOU"  # Define vowels (both lowercase and uppercase)
-    count = 0  # Initialize counter
+  vowels = "aeiou"
+  vowels = vowels + vowels.upper()
+  count = 0
+  for char in text:  # Loop through each character in the string
+    if char in vowels:
+      count += 1
+  return count  # Return the total count of vowels
 
-    for char in text:  # Loop through each character in the string
-        if char in vowels:  # Check if the character is a vowel
-            count += 1  # Increment count if it's a vowel
-
-    return count  # Return the total count of vowels
-
-# Example usage
-text = "Hello World"
+text = "Hello Out There World"
 print("Number of vowels in the text:", count_vowels(text))
-
 ```
 
 
@@ -365,17 +390,17 @@ Write a function `check_password_strength(password)` that evaluates a password. 
 #| min-lines: 3
 # Function to check password strength
 def check_password_strength(password):
-    if len(password) < 6:
-        return "Weak"
-    elif 6 <= len(password) <= 10:
-        return "Moderate"
-    else:
-        return "Strong"
+  if len(password) < 6:
+    return "Weak"
+  elif 6 <= len(password) <= 10:
+    return "Moderate"
+  else:
+    return "Strong"
 
 # List of passwords to test
 passwords = ["abc", "myp@ss1", "SuperSecurePassword123"]
 
 # Loop through the list and test each password
 for password in passwords:
-    print("Password:", password, "-> Strength:", check_password_strength(password))
+  print("Password:", password, "-> Strength:", check_password_strength(password))
 ```
