@@ -1,6 +1,6 @@
 ---
 title: "4. Challenge - Solution"
-#draft: true
+draft: true
 author: "Dr. Piccoli"
 format: live-html
 pyodide:
@@ -58,21 +58,21 @@ The task is to write a program that will compute the total amount a guest should
 
 Since the data comes from a system, a Point of Sale, you can be sure that its structure is fixed. You should ensure that your code works for a typical check, using the following sample:
 
-```
+```         
 data = 'chicken food$12.50;burger food$10.50;beer drink$5.00;wine drink$6.50'
 ```
 
 You should then make sure your code generalizes to the following test cases:
 
-```
+```         
 data = 'chicken food$12.50;burger food$10.50;beer drink$5.00;wine drink$6.50;soda drink$2.50;poke food$14.30'
 ```
 
-```
+```         
 data = 'chicken food$12.50'
 ```
 
-```
+```         
 data = ''
 ```
 

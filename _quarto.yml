@@ -13,11 +13,11 @@ website:
       - text: "Practice"
         menu:
         - p5-strings.qmd
-        - p5-strings-solved.qmd
+        #- p5-strings-solved.qmd
       - text: "Challenge"
         menu:
         - challenge2-strings.qmd
-        - challenge2-strings_solved.qmd
+        #- challenge2-strings_solved.qmd
 #  drafts:
 #    - p5-strings-solved.qmd
 #    - challenge2-strings_solved.qmd

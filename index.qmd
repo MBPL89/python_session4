@@ -83,9 +83,9 @@ The expression in brackets is called an **index**.
 print(letter)
 ```
 
-Keep in mind that in Python, the index is an offset from the beginning of the string, and the offset of the first letter is zero.  
+Keep in mind that in Python, the index is an offset from the beginning of the string, and the offset of the first letter is zero.
 
-::: {.callout-warning} 
+::: callout-warning
 Remember that the value of the index has to be an integer!
 :::
 
@@ -117,7 +117,6 @@ length = len(fruit)
 
 lastWrong = fruit[length] 
 ```
-
 
 ```{pyodide}
 #| startover: false
@@ -220,7 +219,7 @@ atpos = data.find('@')
 print(atpos)
 ```
 
-::: {.callout-warning} 
+::: callout-warning
 Pay attention to syntax: variable.function()
 :::
 
@@ -244,10 +243,8 @@ print(host)
 
 ## Format operator
 
-The format operator, `%` allows us to construct strings, replacing parts of the strings with the data stored in variables.  
-- `%d` - integer
-- `%g` - floating-point number
-- `%s` - string
+The format operator, `%` allows us to construct strings, replacing parts of the strings with the data stored in variables.\
+- `%d` - integer - `%g` - floating-point number - `%s` - string
 
 ```{pyodide}
 #| startover: false
@@ -258,7 +255,7 @@ city = "Pavia"
 print("University of %s" % city)
 ```
 
-You can use multiple values too. 
+You can use multiple values too.
 
 ```{pyodide}
 #| startover: false
@@ -268,7 +265,6 @@ year = 2025
 print("Today is March %drd, %d. We are in %s." % (5, year, city))
 ```
 
-
 ```{pyodide}
 #| autorun: false
 #| startover: false
@@ -277,7 +273,6 @@ print("Today is March %drd, %d. We are in %s." % (5, year, city))
 #Extra practice chunk
 
 ```
-
 
 ::: disclaimer
 <p><strong>Images and GIFs Disclaimer:</strong> Some of the images and GIFs used on this website are not owned by me. They are used for educational and illustrative purposes only. All rights belong to their respective owners. If you believe any content violates copyright, please contact me for prompt removal.</p>
